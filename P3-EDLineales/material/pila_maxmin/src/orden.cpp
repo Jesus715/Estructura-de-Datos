@@ -1,0 +1,154 @@
+ /**
+  * @file orden.cpp
+  * @author Jesus Ruiz Castellano
+  * @date 11 de Noviembre de 2016, 14:50
+  * @brief Programa Orden Conjuntos datos :
+  *        
+  *        Crear un programa denominado orden que dados dos conjuntos de datos de tipo entero nos
+  *        diga:
+  *           1. Si un conjunto es menor (mayor) que otro. Un conjunto es menor que otro si todos
+  *              sus elementos son menores a otro.
+  *           2. Si un rango de valores de un conjunto esta contenido en el rango de valores de otro. El
+  *              rango de valores de un conjunto está contenido en otro si el mínimo y máximo
+  *              esta contenido en el mínimo y máximo del otro conjunto.
+  *        
+  *  
+  */
+
+
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+#include <string>
+#include "Pila_maxmin.h"
+
+using namespace std;
+
+
+
+// ******************************* Resolucion del problema *******************************
+
+ /**
+  * @brief Comprueba si una Pila, P1, es mayor que otra, P2 
+  * @param P1 : primera Pila
+  * @param P2 : segunda Pila
+  * @return True si P1 es mayor que P2, false en caso contrario
+  */
+bool MayorQue ( const Pila_maxmin<int>& P1, const Pila_maxmin<int> P2 ) {
+
+	if ( P1.Tope().minimo > P2.Tope().maximo )
+		return true;
+
+	return false;
+}
+
+
+ /**
+  * @brief Comprueba si un conjunto de datos (almacenados en pila) esta
+  *		   contenido en otro (otra pila) 
+  * @param P1 : primera Pila
+  * @param P2 : segunda Pila
+  * @return True si P1 esta contenido en P2, false en caso contrario
+  */
+bool ContenidaEn ( const Pila_maxmin<int>& P1, const Pila_maxmin<int> P2 ) {
+
+	if ( P1.Tope().minimo > P2.Tope().minimo && P1.Tope().maximo < P2.Tope().maximo )
+		return true;
+
+	return false;
+}
+
+
+int main ( int argc, char * argv[] ) {
+
+// ******************************* Lectura de ficheros *******************************
+	if ( argc != 3 ) {
+	    cout << "\n Para ejecutar, la Sintaxis es :" << endl;
+	    cout << " ./bin/NombreDelEjecutable [Parametro1] [Parametro2]" << endl
+	         << "\n Parametros : " << endl
+	         << " 1. ./datos/primer_fichero_de_datos" << endl
+	         << " 2. ./datos/segundo_fichero_de_datos" << endl << endl;
+	    return 0;
+	}    
+	  
+	ifstream fin (argv[1]);
+	if ( !fin ) {
+	    cout << " No puedo abrir el primer fichero " << argv[1] << endl;
+	    return 0;
+	}
+
+  	ifstream f2in (argv[2]);
+	if ( !f2in ) {
+    	cout << " No puedo abrir el segundo fichero " << argv[2] << endl;
+	    return 0;
+	}
+
+	Pila_maxmin<int> p1, p2;
+	  
+	while ( fin.peek() != EOF ) {
+
+	  	// para evitar almacenar lineas vacias 
+		if ( fin.peek() == '\n' )
+			fin.ignore();
+		
+		else {
+	    	string stringNum;      
+	    	getline ( fin, stringNum); // cojo la linea y la guardo en stringNum
+	    	// inserto stringNum, pasandolo a entero previamente, en p1
+    		p1.Poner(stoi (stringNum.c_str())); 
+		}
+	}
+
+	// igual que con p1, pero en p2
+	while ( f2in.peek() != EOF ) {
+	  
+	  	// para evitar almacenar lineas vacias 
+		if ( f2in.peek() == '\n' )
+			f2in.ignore();
+		
+		else {
+    		string stringNum;      
+	    	getline ( f2in, stringNum);
+
+	    	p2.Poner(stoi (stringNum.c_str()));
+		}
+	}
+
+// ******************************* Muestra de la solucion *******************************
+
+	if ( MayorQue(p1,p2) ) 
+		cout << " \n Como se ve en los topes de ambas pilas : " << endl << " P1 = " << p1.Tope() << endl 
+			 << " P2 = " << p2.Tope() << endl << " La pila P1 es MAYOR que la pila P2" << endl;
+	  	
+	else 
+		cout << " \n Como se ve en los topes de ambas pilas : " << endl << " P1 = " << p1.Tope() << endl 
+			 << " P2 = " << p2.Tope() << endl << " La pila P1 es MENOR que la pila P2" << endl;
+
+
+	if ( ContenidaEn(p1,p2) ) 
+		cout << " \n Segun los topes de ambas pilas, de nuevo : " << endl << " P1 = " << p1.Tope() << endl 
+			 << " P2 = " << p2.Tope() << endl << " La pila P1 SI esta contenida en la pila P2" << endl;
+	  	
+	else 
+		cout << " \n Como se ve en los topes de ambas pilas : " << endl << " P1 = " << p1.Tope() << endl 
+			 << " P2 = " << p2.Tope() << endl << " La pila P1 NO esta contenida en la pila P2" << endl;
+
+// ******************************* Muestra de Datos leidos *******************************
+
+	cout << "\n PILA 1 : " << endl;
+	while ( !p1.Vacia() ) {
+		elemento<int> x = p1.Tope();
+	    cout << x << endl;
+	    p1.Quitar();
+	}     
+
+  	cout << "\n PILA 2 : " << endl;
+  	while ( !p2.Vacia() ) {
+    	elemento<int> x = p2.Tope();
+    	cout << x << endl;
+    	p2.Quitar();
+  	}
+  
+  	cout << endl << endl;
+  	return 0;
+}

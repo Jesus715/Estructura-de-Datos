@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>PRACTICA FINAL : ADIVINA REFRÁN: . Refranes</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">PRACTICA FINAL : ADIVINA REFRÁN
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li class="current"><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('T_8D_8A.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">. <a class="el" href="classRefranes.html">Refranes</a> </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="esRefranes"></a>
+Conjunto Especificacion</h1>
+<p>Una instancia <em>a</em> del tipo de dato abstracto <a class="el" href="classRefranes.html">Refranes</a> es una colección de frases tipicas de un idioma, dispuestas de forma ordenada en las que no hay refranes repetidos.</p>
+<p>Ejemplo :</p>
+<p><br/>
+dar el beneficio de la duda <br/>
+de higos a brevas <br/>
+de perdidos al rio <br/>
+de tal palo tal astilla</p>
+<p>Para poder usar el tipo de dato <a class="el" href="classRefranes.html">Refranes</a> se debe incluir el fichero <code>#include <a class="el" href="refranes_8h.html" title="Fichero cabecera del TDA Refranes, implementado a partir de un Arbol General. ">refranes.h</a></code></p>
+<p>NOTA: Su representacion esta basada en un Arbol General</p>
+<h1><a class="anchor" id="invRefranes"></a>
+Invariante de la representación</h1>
+<pre class="fragment">    - No hay refranes repetidos
+ - Los refranes estan en minuscula
+ - El arbol tiene tantos niveles como indique len_prefijo+1
+ - Si len_prefijo = 1 =&gt; El primer nivel, el nivel 0, se correspondera a la primera letra de cada refran
+ - Si 2 refranes empiezan por la misma letra, el resto de ambos refranes ira a un nodo 
+   independiente, ambos hermanos, e hijos del nodo con etiqueta igual a la primera letra
+ - Para len_prefijo &gt; 1, se procedera igual, asignando la siguiente letra del refran a los nodos
+   del siguiente nivel. Y asi sucesivamente.
+ - Los nodos hoja contendran las cadenas correspondientes al resto del refran, tras haberle quitado
+   las letras que indique len_prefijo.
+</pre><h1><a class="anchor" id="faRefranes"></a>
+Función de abstracción</h1>
+<p>Siendo ArbolGeneral&lt;T&gt; :: iter_preorden it un iterador en preorden sobre el arbol y siendo <em>rep</em> un objeto valido del TDA <a class="el" href="classRefranes.html">Refranes</a>, se representa :</p>
+<p>br&gt;fa(rep) = rep.ab. </p>
+<h1><a class="anchor" id="esRefranesIterator"></a>
+Conjunto Especificacion</h1>
+<p>Una instancia <em>a</em> del tipo de dato abstracto iterator es un puntero para poder movernos a traves de los refranes</p>
+<h1><a class="anchor" id="esRefranesConstIterator"></a>
+Conjunto Especificacion</h1>
+<p>Una instancia <em>a</em> del tipo de dato abstracto <a class="el" href="classRefranes_1_1const__iterator.html">const_iterator</a> es un puntero constante para poder movernos a traves de los refranes, sin poder modificar su contenido</p>
+<h1><a class="anchor" id="esRefranesHash"></a>
+Conjunto Especificacion</h1>
+<p>Una instancia <em>a</em> del tipo de dato abstracto <a class="el" href="classRefranes.html">Refranes</a> es una colección de frases tipicas de un idioma, dispuestas de forma ordenada en las que no hay refranes repetidos.</p>
+<p>Ejemplo :</p>
+<p>dar el beneficio de la duda de higos a brevas de perdidos al rio de tal palo tal astilla</p>
+<p>Para poder usar el tipo de dato Refranes_Hash se debe incluir el fichero <code>#include <a class="el" href="refranes__hash_8h.html" title="Fichero cabecera del TDA Refranes, implementado a partir de una tabla hash. ">refranes_hash.h</a></code></p>
+<p>NOTA: Su representacion esta basada en una Tabla Hash</p>
+<h1><a class="anchor" id="invRefranesHash"></a>
+Invariante de la representación</h1>
+<ul>
+<li>No hay refranes repetidos</li>
+<li>Los refranes estan en minuscula</li>
+<li>No habra 2 refranes con el mismo valor <a class="el" href="classRefranes_1_1my__hash.html">my_hash</a> como clave</li>
+</ul>
+<h1><a class="anchor" id="faRefranesHash"></a>
+Función de abstracción</h1>
+<p>Siendo <em>rep</em> un objeto valido del TDA <a class="el" href="classRefranes.html">Refranes</a>, se representa como :</p>
+<p><br/>
+fa(rep) = rep.ab[rep.refran[rep.my_hash0]]  <br/>
+ rep.ab[rep.refran[rep.my_hash1]]  <br/>
+ ...  <br/>
+ rep.ab[rep.refran[rep.my_hashN]]  </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<hr>
+<small>ETS Ingeniería Informática y Telecomunicaciones. Universidad de Granada.
+</small>

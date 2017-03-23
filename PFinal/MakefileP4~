@@ -1,0 +1,91 @@
+SRC = ./src
+INC = ./include
+OBJ = ./obj
+BIN = ./bin
+LIB = ./lib
+CXX = g++
+CPPFLAGS = -Wall -g -c -std=c++11 -I$(INC) 
+
+
+# ************ Compilación de módulos ************ 	
+
+all: $(BIN)/adivina $(BIN)/estudio_prefijo $(BIN)/test_refranes $(BIN)/test_refranes_hash $(BIN)/filtra_fichero $(BIN)/escribe_arbol_disco $(BIN)/test_refranes
+
+
+$(BIN)/escribe_arbol_disco: $(OBJ)/escribe_arbol_disco.o $(INC)/ArbolGeneral.h
+	$(CXX) -o $(BIN)/escribir_arbol_disco $(OBJ)/escribe_arbol_disco.o
+
+$(BIN)/filtra_fichero: $(OBJ)/filtra_fichero.o 
+	$(CXX) -o $(BIN)/filtra_fichero $(OBJ)/filtra_fichero.o 
+
+$(BIN)/test_refranes: $(OBJ)/test_refranes.o $(OBJ)/refranes.o
+	$(CXX) -o $(BIN)/test_refranes $(OBJ)/refranes.o $(OBJ)/test_refranes.o 
+
+$(BIN)/test_refranes_hash: $(OBJ)/test_refranes.o $(OBJ)/refranes_hash.o
+	$(CXX) -o $(BIN)/test_refranes_hash $(OBJ)/refranes_hash.o $(OBJ)/test_refranes.o 
+		
+$(BIN)/adivina: $(OBJ)/adivina.o $(OBJ)/refranes.o
+	$(CXX) -o $(BIN)/adivina $(OBJ)/adivina.o $(OBJ)/refranes.o
+		
+$(BIN)/estudio_prefijo: $(OBJ)/estudio_prefijo.o $(OBJ)/refranes.o
+	$(CXX) -o $(BIN)/estudio_prefijo $(OBJ)/refranes.o $(OBJ)/estudio_prefijo.o
+
+
+$(OBJ)/filtra_fichero.o: $(SRC)/filtra_fichero.cpp 
+	$(CXX) $(CPPFLAGS)  $(SRC)/filtra_fichero.cpp -o  $(OBJ)/filtra_fichero.o 
+
+$(OBJ)/escribe_arbol_disco.o: $(SRC)/escribe_arbol_disco.cpp 
+	$(CXX) $(CPPFLAGS)  $(SRC)/escribe_arbol_disco.cpp -o  $(OBJ)/escribe_arbol_disco.o  
+	
+$(OBJ)/refranes.o: $(SRC)/refranes.cpp $(INC)/refranes.h $(INC)/ArbolGeneral.h
+	$(CXX) $(CPPFLAGS)  $(SRC)/refranes.cpp -o $(OBJ)/refranes.o
+
+$(OBJ)/test_refranes.o: $(SRC)/test_refranes.cpp $(INC)/refranes.h
+	$(CXX) $(CPPFLAGS)  $(SRC)/test_refranes.cpp -o $(OBJ)/test_refranes.o
+	
+$(OBJ)/refranes_hash.o: $(SRC)/refranes_hash.cpp $(INC)/refranes_hash.h 
+	$(CXX) $(CPPFLAGS)  $(SRC)/refranes_hash.cpp -o $(OBJ)/refranes_hash.o	
+
+$(OBJ)/adivina.o: $(SRC)/adivina.cpp $(INC)/refranes.h
+	$(CXX) $(CPPFLAGS)  $(SRC)/adivina.cpp -o $(OBJ)/adivina.o  
+	
+$(OBJ)/refranes.o: $(SRC)/refranes.cpp $(INC)/refranes.h $(INC)/ArbolGeneral.h
+	$(CXX) $(CPPFLAGS)  $(SRC)/refranes.cpp -o $(OBJ)/refranes.o
+
+$(OBJ)/estudio_prefijo.o: $(SRC)/estudio_prefijo.cpp $(INC)/refranes.h
+	$(CXX) $(CPPFLAGS)  $(SRC)/estudio_prefijo.cpp -o $(OBJ)/estudio_prefijo.o
+
+
+# ************ Generación de documentación ******************
+
+documentacion:
+	@echo "Generando documentacion de Doxygen..."
+	doxygen doc/doxys/Doxyfile
+
+	
+
+# ************ Limpieza ************  
+
+mrproper :
+	@echo "Limpiando contenido basura en directorios..."
+	rm $(BIN)* $(OBJ)* $(LIB)* $(SRC)*~ $(INC)*~ ./*~ doc/html/* 
+
+
+
+# ************ Creacion ************
+
+install:
+	mkdir $(BIN) $(OBJ) $(LIB) 
+
+
+
+# ************************* Empaquetado ****************************
+# Genera el archivo .tgz de la práctica mediante la linea de comandos
+# Genera el archivo en el directorio padre al que abrimos el Terminal
+# Coge el nombre del directorio como nombre 
+
+tar:  
+	@echo "Empaquetando..."
+	tar --exclude "*.tgz" --exclude datos --exclude "*~" -zcvf ../oper_trad.tgz ../oper_trad 
+
+

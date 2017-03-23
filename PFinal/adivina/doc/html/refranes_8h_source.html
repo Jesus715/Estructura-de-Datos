@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>PRACTICA FINAL : ADIVINA REFRÁN: Fichero Fuente include/refranes.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">PRACTICA FINAL : ADIVINA REFRÁN
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('refranes_8h_source.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">refranes.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="refranes_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __REFRANES__H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __REFRANES__H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;ArbolGeneral.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classRefranes.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRefranes.html">Refranes</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classRefranes.html#a7fc27c2ce8440027ac1fdef35bf33de8">   68</a></span>&#160;  <a class="code" href="classArbolGeneral.html">ArbolGeneral&lt;string&gt;</a> <a class="code" href="classRefranes.html#a7fc27c2ce8440027ac1fdef35bf33de8">ab</a>;  </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classRefranes.html#a5717568b0e5f2f7b8c9e7cccf43f8a5b">   69</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classRefranes.html#a5717568b0e5f2f7b8c9e7cccf43f8a5b">len_prefijo</a>;          </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classRefranes.html#afb02dd63c4a8e64933ed55188b26760a">   70</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classRefranes.html#afb02dd63c4a8e64933ed55188b26760a">n_ref</a>;                </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classRefranes.html#a730f48f416f5ebbbbc06c03c864ef593">   71</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classRefranes.html#a730f48f416f5ebbbbc06c03c864ef593">caracteres_totales</a>;   </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="classRefranes.html">Refranes</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="classRefranes.html">Refranes</a> (<span class="keywordtype">int</span> lpre);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classRefranes.html#ab0e11cc47b2acb90e50413487620998b">   88</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classRefranes.html#ab0e11cc47b2acb90e50413487620998b">getLen_prefijo</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> len_prefijo; }       </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">int</span> size () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">void</span> Insertar(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;refran);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordtype">void</span> BorrarRefran(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;refran);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="comment">// Declaracion adelantada de los iteradores de refranes</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keyword">class </span>iterator; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keyword">class </span>const_iterator; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  pair&lt;bool, iterator&gt; Esta(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;refran);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordtype">void</span> clear();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">friend</span> istream &amp; operator&gt;&gt;(istream &amp;is, <a class="code" href="classRefranes.html">Refranes</a> &amp;R);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keyword">friend</span> ostream &amp; operator&lt;&lt;(ostream &amp;os, <a class="code" href="classRefranes.html">Refranes</a> &amp;R);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordtype">int</span> Caracteres_Refranes();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordtype">int</span> Caracteres_Almacenados();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordtype">int</span> Numero_Nodos() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">/************************ ITERADORES ************************/</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classRefranes_1_1iterator.html">  162</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classRefranes_1_1iterator.html">iterator</a> {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <a class="code" href="classArbolGeneral.html">ArbolGeneral&lt;string&gt;</a> :: iter_preorden it;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <span class="keywordtype">string</span> cad;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <a class="code" href="classRefranes_1_1iterator.html">iterator</a>() { cad=<span class="stringliteral">&quot;&quot;</span>;}</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keywordtype">string</span> &amp; operator *();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="classRefranes_1_1iterator.html">iterator</a> &amp;i)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="classRefranes_1_1iterator.html">iterator</a> &amp;i)<span class="keyword">const</span>;   </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <a class="code" href="classRefranes_1_1iterator.html">iterator</a> &amp;operator ++();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classRefranes.html">Refranes</a>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classRefranes_1_1const__iterator.html">const_iterator</a>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        };</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  </div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="classRefranes_1_1const__iterator.html">  187</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classRefranes_1_1const__iterator.html">const_iterator</a> {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <a class="code" href="classArbolGeneral.html">ArbolGeneral&lt;string&gt;</a> :: const_iter_preorden it;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordtype">string</span> cad;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;          </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <a class="code" href="classRefranes_1_1const__iterator.html">const_iterator</a>();</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <a class="code" href="classRefranes_1_1const__iterator.html">const_iterator</a>(<span class="keyword">const</span> <a class="code" href="classRefranes_1_1iterator.html">iterator</a>  &amp;i);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordtype">string</span> &amp; operator *();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="classRefranes_1_1const__iterator.html">const_iterator</a> &amp;i)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="classRefranes_1_1const__iterator.html">const_iterator</a> &amp;i)<span class="keyword">const</span>;    </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <a class="code" href="classRefranes_1_1const__iterator.html">const_iterator</a> &amp;operator ++();</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classRefranes.html">Refranes</a>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        };        </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">/*************** BEGIN y END *************/</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <a class="code" href="classRefranes_1_1iterator.html">iterator</a> <a class="code" href="classRefranes.html#ad0d55129b8b167b43a940f10ef7db0af">begin</a>();</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <a class="code" href="classRefranes_1_1iterator.html">iterator</a> <a class="code" href="classRefranes.html#a561c424d749f21c41d4e597ecf92baba">end</a>();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;          </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <a class="code" href="classRefranes_1_1const__iterator.html">const_iterator</a> <a class="code" href="classRefranes.html#a39b968e9d952c40a9efe5440220209ee">Cbegin</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <a class="code" href="classRefranes_1_1const__iterator.html">const_iterator</a> <a class="code" href="classRefranes.html#a9bdfa683efd5f018917b0e9f477f7f45">Cend</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;};</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classRefranes_html_a561c424d749f21c41d4e597ecf92baba"><div class="ttname"><a href="classRefranes.html#a561c424d749f21c41d4e597ecf92baba">Refranes::end</a></div><div class="ttdeci">iterator end()</div><div class="ttdoc">Se posiciona al final, en un objeto no valido. </div></div>
+<div class="ttc" id="classRefranes_1_1iterator_html"><div class="ttname"><a href="classRefranes_1_1iterator.html">Refranes::iterator</a></div><div class="ttdef"><b>Definition:</b> <a href="refranes_8h_source.html#l00162">refranes.h:162</a></div></div>
+<div class="ttc" id="classRefranes_1_1const__iterator_html"><div class="ttname"><a href="classRefranes_1_1const__iterator.html">Refranes::const_iterator</a></div><div class="ttdef"><b>Definition:</b> <a href="refranes_8h_source.html#l00187">refranes.h:187</a></div></div>
+<div class="ttc" id="classRefranes_html_afb02dd63c4a8e64933ed55188b26760a"><div class="ttname"><a href="classRefranes.html#afb02dd63c4a8e64933ed55188b26760a">Refranes::n_ref</a></div><div class="ttdeci">int n_ref</div><div class="ttdef"><b>Definition:</b> <a href="refranes_8h_source.html#l00070">refranes.h:70</a></div></div>
+<div class="ttc" id="classRefranes_html_a730f48f416f5ebbbbc06c03c864ef593"><div class="ttname"><a href="classRefranes.html#a730f48f416f5ebbbbc06c03c864ef593">Refranes::caracteres_totales</a></div><div class="ttdeci">int caracteres_totales</div><div class="ttdef"><b>Definition:</b> <a href="refranes_8h_source.html#l00071">refranes.h:71</a></div></div>
+<div class="ttc" id="classRefranes_html_ad0d55129b8b167b43a940f10ef7db0af"><div class="ttname"><a href="classRefranes.html#ad0d55129b8b167b43a940f10ef7db0af">Refranes::begin</a></div><div class="ttdeci">iterator begin()</div><div class="ttdoc">Se posiciona en el primer refran. </div></div>
+<div class="ttc" id="classRefranes_html_ab0e11cc47b2acb90e50413487620998b"><div class="ttname"><a href="classRefranes.html#ab0e11cc47b2acb90e50413487620998b">Refranes::getLen_prefijo</a></div><div class="ttdeci">int getLen_prefijo() const </div><div class="ttdoc">devuelve el prefijo de refranes </div><div class="ttdef"><b>Definition:</b> <a href="refranes_8h_source.html#l00088">refranes.h:88</a></div></div>
+<div class="ttc" id="classRefranes_html_a5717568b0e5f2f7b8c9e7cccf43f8a5b"><div class="ttname"><a href="classRefranes.html#a5717568b0e5f2f7b8c9e7cccf43f8a5b">Refranes::len_prefijo</a></div><div class="ttdeci">int len_prefijo</div><div class="ttdef"><b>Definition:</b> <a href="refranes_8h_source.html#l00069">refranes.h:69</a></div></div>
+<div class="ttc" id="classRefranes_html"><div class="ttname"><a href="classRefranes.html">Refranes</a></div><div class="ttdef"><b>Definition:</b> <a href="refranes_8h_source.html#l00021">refranes.h:21</a></div></div>
+<div class="ttc" id="classRefranes_html_a9bdfa683efd5f018917b0e9f477f7f45"><div class="ttname"><a href="classRefranes.html#a9bdfa683efd5f018917b0e9f477f7f45">Refranes::Cend</a></div><div class="ttdeci">const_iterator Cend() const </div><div class="ttdoc">Se posiciona al final, en un objeto no valido. </div></div>
+<div class="ttc" id="classArbolGeneral_html"><div class="ttname"><a href="classArbolGeneral.html">ArbolGeneral&lt; string &gt;</a></div></div>
+<div class="ttc" id="classRefranes_html_a39b968e9d952c40a9efe5440220209ee"><div class="ttname"><a href="classRefranes.html#a39b968e9d952c40a9efe5440220209ee">Refranes::Cbegin</a></div><div class="ttdeci">const_iterator Cbegin() const </div><div class="ttdoc">Se posiciona en el primer refran. </div></div>
+<div class="ttc" id="classRefranes_html_a7fc27c2ce8440027ac1fdef35bf33de8"><div class="ttname"><a href="classRefranes.html#a7fc27c2ce8440027ac1fdef35bf33de8">Refranes::ab</a></div><div class="ttdeci">ArbolGeneral&lt; string &gt; ab</div><div class="ttdef"><b>Definition:</b> <a href="refranes_8h_source.html#l00068">refranes.h:68</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<hr>
+<small>ETS Ingeniería Informática y Telecomunicaciones. Universidad de Granada.
+</small>
